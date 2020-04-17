@@ -1,0 +1,8 @@
+#ifndef PROJECT_CONF_H_
+#define PROJECT_CONF_H_
+//#warning "HELLO!!!!!!"
+
+#define TESTBED TESTBED_KIEL
+#define TESTBED_CONF_TARGET_TYPE TARGET_TYPE_ZOUL
+
+#endif /* PROJECT_CONF_H_ */

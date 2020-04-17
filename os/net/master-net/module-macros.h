@@ -1,0 +1,2 @@
+#define NETSTACK_CONF_WITH_MASTER_NET 1
+#define NETSTACK_CONF_NETWORK masternet_driver
