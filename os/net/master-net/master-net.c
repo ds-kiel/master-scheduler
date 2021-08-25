@@ -71,10 +71,10 @@ static void
 input(void)
 {
   if(current_callback != NULL) {
-    //TODOLIV: below: might be too verbose timing wise
-    //LOG_INFO("received %u bytes from ", packetbuf_datalen());
-    //LOG_INFO_LLADDR(packetbuf_addr(PACKETBUF_ADDR_SENDER));
-    //LOG_INFO_("\n");
+    //below: might be too verbose timing wise
+    LOG_INFO("received %u bytes from ", packetbuf_datalen());
+    LOG_INFO_LLADDR(packetbuf_addr(PACKETBUF_ADDR_SENDER));
+    LOG_INFO_("\n");
     current_callback(packetbuf_dataptr(), packetbuf_datalen(),
       packetbuf_addr(PACKETBUF_ADDR_SENDER), packetbuf_addr(PACKETBUF_ADDR_RECEIVER));
   }

@@ -28,7 +28,7 @@
 #define TSCH_CONF_FLOW_BASED_QUEUES          0
 #define TSCH_CONF_TTL_BASED_RETRANSMISSIONS  0
 
-#define MASTER_TSCH_COORDINATOR 0x08
+#define MASTER_TSCH_COORDINATOR 0x01
 
 #include "net/master-routing/master-project-conf.h"
 

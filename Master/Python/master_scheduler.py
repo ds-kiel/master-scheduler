@@ -160,7 +160,7 @@ def main():
     for flow_to_create in flows_to_create:
       flow_parameters = [int(x.strip()) for x in flow_to_create.split(',')]
       communications.append(tuple(flow_parameters[:4]))
-  if args.flows_file:
+  elif args.flows_file:
     with open(args.flows_file) as flows_file:
       for line in flows_file:
         flow_parameters = [int(x.strip()) for x in line.split(',')]

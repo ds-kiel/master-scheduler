@@ -174,10 +174,6 @@ static master_routing_input_callback current_callback = NULL;
   static linkaddr_t destination = {{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }};
 # endif
 
-# if TESTBED == TESTBED_COOJA
-    static uint8_t destinations[NUM_COOJA_NODES];
-# endif
-
 #endif /* MASTER_SCHEDULE */
 
 uint8_t
@@ -533,6 +529,11 @@ init_master_routing(void)
     if(started == 0) {
       /* Initialize Testbed/Deployment */
       init_deployment();
+
+      /* configure transmit power */
+#     if CONTIKI_TARGET_ZOUL && defined(MASTER_CONF_CC2538_TX_POWER)
+        NETSTACK_RADIO.set_value(RADIO_PARAM_TXPOWER, MASTER_CONF_CC2538_TX_POWER);
+#     endif /* CONTIKI_TARGET_ZOUL && defined(MASTER_CONF_CC2538_TX_POWER) */
 
 #     if MAC_CONF_WITH_TSCH
         tsch_set_coordinator(linkaddr_cmp(&coordinator_addr, &linkaddr_node_addr));
